@@ -12,7 +12,7 @@ package banco;
 public class ContaCorrente extends Conta{
     
     protected double chequeEspecial;
-    protected static double imposto = 0.8;
+    protected double imposto = 0.8;
     
     /*
      *  método sacar sobrescrito.
@@ -21,11 +21,17 @@ public class ContaCorrente extends Conta{
      */
     @Override
     public void sacar(double valor){
-        if((this.saldo + this.chequeEspecial) >= valor){
-            super.sacar(valor);
-            super.sacar(valor * this.imposto);
+        
+        double imposto = (valor * this.imposto);
+        
+        if((this.saldo + this.chequeEspecial + imposto) >= valor){
+            
+            super.sacar(valor + (valor * this.imposto));
+            
         }else{
+            
             System.out.println("Retirada não permitida...");
+            
         }
     }
 
@@ -37,12 +43,12 @@ public class ContaCorrente extends Conta{
         this.chequeEspecial = chequeEspecial;
     }
 
-    public static double getImposto() {
+    public double getImposto() {
         return imposto;
     }
 
-    public static void setImposto(double imposto) {
-        ContaCorrente.imposto = imposto;
+    public void setImposto(double imposto) {
+        this.imposto = imposto;
     }
     
     
