@@ -7,21 +7,22 @@ package banco;
 
 /**
  *
- * @author adrysson
+ * @author adryssonlima
  */
-public class ContaPoupanca extends Conta {
-    
+public final class ContaPoupanca extends Conta {
+       
     /*
-     *  método sacar sobrescrito.
+     *  implementaçõa do método sacar.
      *  verifica se o valor esta dentro do limite
      *  debita o imposto
      */
     @Override
     public void sacar(double valor){
+        
         if(this.saldo >= valor)
-            super.sacar(valor);
+            this.saldo -= valor;
         else
-            System.out.println("Retirada não permitida...");
+            System.out.println("Saldo insuficiente...");
     }
     
 }

@@ -9,13 +9,13 @@ package banco;
  *
  * @author adrysson
  */
-public class ContaCorrente extends Conta{
+public final class ContaCorrente extends Conta{
     
-    protected double chequeEspecial;
-    protected double imposto = 0.8;
-    
+    private double chequeEspecial = 100.00;
+    private double imposto = 0.8;
+       
     /*
-     *  método sacar sobrescrito.
+     *  implementaçõa do método sacar.
      *  verifica se o valor esta dentro do limite (saldo + chequeEspecial)
      *  debita o imposto
      */
@@ -26,11 +26,11 @@ public class ContaCorrente extends Conta{
         
         if((this.saldo + this.chequeEspecial + imposto) >= valor){
             
-            super.sacar(valor + (valor * this.imposto));
+            this.saldo -= (valor + imposto);
             
         }else{
             
-            System.out.println("Retirada não permitida...");
+            System.out.println("Saldo insuficiente...");
             
         }
     }
@@ -50,6 +50,6 @@ public class ContaCorrente extends Conta{
     public void setImposto(double imposto) {
         this.imposto = imposto;
     }
-    
+  
     
 }

@@ -19,16 +19,12 @@ public class CaixaEletronico {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner leia = new Scanner(System.in);
-        Pessoa adrysson = new Pessoa().setNome().setEndereco().setNascimento();
-        ContaCorrente cc = new ContaCorrente();
+        Agencia a = new Agencia();
         
-        cc.setCod(1);
-        cc.setTitular(adrysson);
-        cc.setChequeEspecial(200);
-        
-        System.out.println("Código: " + cc.getCod());
-        System.out.println("Titular: " + cc.getTitular().getNome());
-        System.out.println("Cheque Especial: " + cc.getChequeEspecial());
+        a.criarConta();
+        a.criarConta();
+        a.excluirConta();
+        a.listarContas();
         
     }
     

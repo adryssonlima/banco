@@ -5,20 +5,32 @@
  */
 package banco;
 
-import java.util.Scanner;
 
 /**
  *
- * @author adrysson
+ * @author adryssonlima
  */
-public abstract class Conta {
+public class Conta extends Transferencia {
     
     protected int cod;
     protected Pessoa titular;
     protected double saldo = 0.0;
-        
+    private double chequeEspecial = 100.00;
+    private double imposto = 0.8;
+           
     public void sacar(double valor){
-        this.saldo -= valor;
+        
+        double imposto = (valor * this.imposto);
+        
+        if((this.saldo + this.chequeEspecial + imposto) >= valor){
+            
+            this.saldo -= (valor + imposto);
+            
+        }else{
+            
+            System.out.println("Saldo insuficiente...");
+            
+        }
     }
     
     public void depositar(double valor){
@@ -47,6 +59,22 @@ public abstract class Conta {
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
+    }
+    
+    public double getChequeEspecial() {
+        return chequeEspecial;
+    }
+
+    public void setChequeEspecial(double chequeEspecial) {
+        this.chequeEspecial = chequeEspecial;
+    }
+
+    public double getImposto() {
+        return imposto;
+    }
+
+    public void setImposto(double imposto) {
+        this.imposto = imposto;
     }
     
     

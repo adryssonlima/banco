@@ -9,16 +9,21 @@ package banco;
  *
  * @author adrysson
  */
-public class Transferencia {
+public abstract class Transferencia {
     
-    private ContaCorrente debitado;
-    private ContaCorrente creditado;
-    
-    public void transferir(ContaCorrente debitado, ContaCorrente creditado, double valor){
-        if((debitado.getSaldo() + debitado.getChequeEspecial() + debitado.getImposto() * valor) >= valor){
+    public void transferir(Conta debitado, Conta creditado, double valor){
+        
+        if((debitado.getSaldo() + debitado.getChequeEspecial() + (debitado.getImposto() * valor)) >= valor){
+            
             debitado.sacar(valor);
             creditado.depositar(valor);
+            
+        } else {
+            
+            System.out.println("Saldo insuficiente...");
+            
         }
+        
     }
     
 }

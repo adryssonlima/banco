@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/adrysson/NetBeansProjects/banco/src/banco/CaixaEletronico.java</file>
+            <file>file:/home/adrysson/NetBeansProjects/banco/src/banco/Transferencia.java</file>
+            <file>file:/home/adrysson/NetBeansProjects/banco/src/banco/Conta.java</file>
+            <file>file:/home/adrysson/NetBeansProjects/banco/src/banco/Pessoa.java</file>
+            <file>file:/home/adrysson/NetBeansProjects/banco/src/banco/ContaCorrente.java</file>
+        </group>
+    </open-files>
 </project-private>
